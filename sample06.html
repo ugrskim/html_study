@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라인컴퓨터아트학원</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Hi+Melody&family=Single+Day&display=swap" rel="stylesheet">
+    <style>
+        body{margin: 0;}
+        #layout01 {max-width: 900px; margin: auto;}
+
+        header {background: skyblue; padding: 20px; text-align: center; transition: 0.5s;}
+
+        header:hover {background: tomato;}
+
+        h1 {
+  font-family: "Black Han Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+        nav ul      {display: flex; /* list-style-position: inside; */ padding-left: 0; max-width:700px; margin:auto; padding:50px 0; list-style-type: circle; list-style:none; flex-wrap: wrap; justify-content: center;}
+
+        nav li      {/*flex:1;*/ text-align: center; transition: 0.5s; flex-basis: 140px;}
+
+        nav li:hover {transform: scale(1.5);}
+
+        nav a {color: black; text-decoration: none;
+        
+            font-family: "Single Day", cursive;
+             font-weight: 400;
+             font-style: normal;
+        }
+
+       
+
+        #layout02 { display: flex;}
+
+        main { flex:2.5;}
+
+        main section {background: aqua; transition: 0.5s; padding: 20px;}
+        
+
+        main section:hover {transform: rotate(10deg);}
+        main section p
+       {
+    font-family: "Hi Melody", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    }
+
+
+        main article {background: gold; padding: 20px;}
+
+        main article p
+       {
+  font-family: "Single Day", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+        aside { background: #ddd; flex:1; transition: 0.5s; padding: 20px;}
+
+        aside:hover {background: linear-gradient(tomato,gold)}
+
+        aside p
+        {
+    font-family: "Hi Melody", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    }
+
+        
+    footer {
+                padding: 20px;
+                text-align: center;
+                font-family: "Hi Melody", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                background: linear-gradient(orange, yellow);
+            }
+            footer:hover {
+                background: linear-gradient(yellow,orange);
+            }
+
+            /* 작은기계정치에 대한 설정 (최대넓이: 550픽셀) 0~550까지 적용됨 */
+            @media(max-width:550px) {
+                #layout02   {flex-direction: column;}
+                nav li:nth-child(4),
+                nav li:nth-child(5)  {/*display:none;*/}
+            }
+    </style>
+
+
+</head>
+
+
+<body>
+<div id="layout01">
+    <header><h1>마크업 첫걸음</h1></header>
+    <nav>
+        <ul>
+            <li><a href="#">메뉴1</a></li>
+            <li><a href="#">메뉴2</a></li>
+            <li><a href="#">메뉴3</a></li>
+            <li><a href="#">메뉴4</a></li>
+            <li><a href="#">메뉴5</a></li>
+
+        </ul>
+
+        
+
+    </nav>
+    <div id="layout02">
+         <main>
+            <section>
+                <h2>정보구역-1</h2>
+                <p>모든 국민은 법률이 정하는 바에 의하여 납세의 의무를 진다. 대통령이 임시회의 집회를 요구할 때에는 기간과 집회요구의 이유를 명시하여야 한다. 국가는 대외무역을 육성하며, 이를 규제·조정할 수 있다.</p>
+                
+                    
+        
+
+            <p>모든 국민은 양심의 자유를 가진다. 국가는 노인과 청소년의 복지향상을 위한 정책을 실시할 의무를 진다. 국회는 선전포고, 국군의 외국에의 파견 또는 외국군대의 대한민국 영역안에서의 주류에 대한 동의권을 가진다.</p>
+
+
+            </section>
+            <article>
+                <h2>정보구역-2</h2>
+                <p>정당의 목적이나 활동이 민주적 기본질서에 위배될 때에는 정부는 헌법재판소에 그 해산을 제소할 수 있고, 정당은 헌법재판소의 심판에 의하여 해산된다. 지방자치단체는 주민의 복리에 관한 사무를 처리하고 재산을 관리하며, 법령의 범위안에서 자치에 관한 규정을 제정할 수 있다. 법관은 헌법과 법률에 의하여 그 양심에 따라 독립하여 심판한다.</p>
+
+
+            </article>
+
+
+         </main>
+         <aside><h3>부가정보</h3>
+            <p>국정의 중요한 사항에 관한 대통령의 자문에 응하기 위하여 국가원로로 구성되는 국가원로자문회의를 둘 수 있다.</p>
+
+            <p>여자의 근로는 특별한 보호를 받으며, 고용·임금 및 근로조건에 있어서 부당한 차별을 받지 아니한다.</p>
+            
+            <p>국회의 회의는 공개한다. 다만, 출석의원 과반수의 찬성이 있거나 의장이 국가의 안전보장을 위하여 필요하다고 인정할 때에는 공개하지 아니할 수 있다.</p>
+        </aside>
+    </div>
+    <footer>하단구역</footer>
+</div>    
+</body>
+</html>
