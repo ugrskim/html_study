@@ -36,5 +36,5 @@ width: 500px; height: 400px; left:calc((100% /2) - 250px); top: 120px; border-ra
 
 /*작은 기계 장치*/
 @media(max-width:550px) {
-    #popup {width: 100%;}
+    #popup {width: 100%; left:0;}
 }
