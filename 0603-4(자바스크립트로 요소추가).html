@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트로 태그요소 추가</title>
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+
+        #layout {max-width: 1000px; margin: auto; border: 5px solid green;overflow: auto;}
+
+        header {background: cornflowerblue; display: flex;align-items: flex-end; padding: 15px;}
+
+        h1{padding: 30px; border: 1px solid yellow; margin:0 10px;}
+
+        nav{ flex: 1; display: flex; 
+            background-color: cornsilk; justify-content: space-evenly; 
+            align-items: center; padding: 15px; margin: 0 70px 0 20px ;}
+
+        nav > a { border: 1px solid seagreen; width: 70px; text-align: center;}
+
+        main {background: skyblue; display: flex; padding: 20px;}
+
+        section{padding: 200px 50px; background-color:  olive; flex: 2; text-align: center; margin-right: 20px; }
+
+        section ul {text-align: left; border: 2px solid gray;list-style-position: inside;}
+
+        #right {background-color: beige; border: 1px solid whitesmoke; flex: 1.5; text-align: center; }
+
+        article{background-color: red; padding: 80px;}
+
+        aside{background-color: blueviolet; padding: 80px; margin-top: 20px; /*margin-bottom: 20px;*/}
+
+        footer {background: slategrey; padding: 10px; padding-left: 150px;}
+
+        address {background-color: blue; padding: 10px; max-width: 600px;}
+
+        p {background-color: blue; margin-top: 10px; padding: 10px; max-width: 600px;}
+
+        audio{max-width: 100%;}
+
+        video{max-width: 100%; height: 400px;border: 4px solid red;}
+
+        /*(0~530px 넓이에서 디자인 적용됨)*/
+        @media(max-width:530px){
+            header {flex-direction: column; align-items: flex-start;}
+            nav {margin:10px; width: 97%;}
+            main{flex-direction: column;}
+            section{margin-right: 0; margin-bottom: 20px;} 
+            footer{padding-left: 10px;}
+        }
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <header>
+            <h1>반응형 웹</h1>
+            <nav>
+                <a href="#">메뉴1</a>
+                <a href="#">메뉴2</a>
+                <a href="#">메뉴3</a>
+                <a href="#">메뉴4</a>
+                <a href="#">메뉴5</a>
+
+            </nav>
+        </header>
+        <main>
+            <section>
+                <h2>콘텐츠 그룹01</h2>
+                <audio controls>
+                    <source src="media/radiant.mp3" type="audio/mpeg">
+                </audio>
+                <video controls>
+                    <source src="media/movie.mp4" type="video/mp4">
+                </video>
+            </section>
+            <section>
+                <h2>콘텐츠 그룹02</h2>
+                <audio controls>
+                    <source src="media/horse.mp3" type="audio/mpeg">
+                </audio>
+                <video controls >
+                    <source src="media/sea.mp4" type="video/mp4">
+                </video>
+            </section>
+            <div id="right">
+                <article>
+                    <h2>주요 기사</h2>
+                </article>
+                <aside>
+                    <h3>광고</h3>
+                </aside>
+            </div>
+        </main>
+        <footer>
+            <address>
+                경기도 부천시 오정구 삼정동 032)674-5685 icoxpub@naver.com
+            </address>
+            <p>
+                COPYRIGHT ⓒ All right resereved.
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        const $h2 = document.querySelector("main section:first-child h2");
+        //alert ($h2);
+        $h2.innerHTML += "<br><b style='font-size:1.2rem; color:red;'>태그가 추가됨</b>";
+
+        const $p = document.createElement("p");
+        //alert($p);
+        $h2.after($p);
+        $p.innerHTML="형제요소가 추가됨."
+        
+        const $h3 = document.querySelector("main section:last-of-type h2")
+        //alert ($h3)
+        //$h3.before($p);
+        const $div = document.createElement("div");
+        $h3.before($div)
+        $div.innerHTML="형제요소가 추가됨." ;
+
+
+        const $pp = document.querySelector("section p")
+        //alert($pp);
+        const $ul = document.createElement("ul");
+        //alert($ul);
+        $ul.innerHTML= "<li>딸기</li><li>바나나</li><li>파인애플</li>";
+        $pp.after($ul);
+    </script>
+</body>
+</html>
