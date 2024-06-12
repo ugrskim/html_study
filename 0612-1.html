@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공이 좌우 그리고 상하로 무한반복하는 스크립트</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+
+        #layout{max-width: 700px; margin: auto; border: 5px solid skyblue; position: relative; height: 100vh;}
+
+        #b1,#b2{width: 100px; height: 100px; border-radius: 50%; position: absolute; background: radial-gradient(skyblue, whitesmoke, blue);}
+
+        #b1 {top: 100px;  left: 0;}
+
+        #b2 {top:0; left: calc((100% - 100px)/2);}
+    </style>
+</head>
+<body>
+    <div id="layout">
+    <h1>𝑨𝒏𝒊𝒎𝒂𝒕𝒊𝒐𝒏</h1>
+    <div id="b1"></div>
+    <div id="b2"></div>
+    </div>
+
+    <script>
+        const $layout = document.querySelector("#layout");
+
+        const $b1 = document.querySelector("#b1");
+
+        const $b2 = document.querySelector("#b2");
+
+        let i = 0;
+
+        let j = 0;
+
+        let sp = 10;
+
+        let sp2 = 10;
+
+        let ww = $layout.offsetWidth;
+
+        let wh = $layout.offsetHeight;
+
+        let b1w = $b1.offsetWidth;
+
+        let b2w = $b2.offsetWidth;
+
+        setInterval(()=> move(),10);
+
+        move = () => {
+        
+        i+=sp;
+
+        j+=sp2;
+
+        if( i+b1w >= ww || i <=0 ) sp *= -1;
+
+        if( j+b2w >= wh || j <=0 ) sp2 *= -1;
+
+        $b1.style.left=`${i}px`;
+        $b2.style.top = `${j}px`; 
+        
+    }
+
+        
+    </script>
+</body>
+</html>
